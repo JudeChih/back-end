@@ -1,0 +1,691 @@
+.table {
+    &-model{
+        width: 100%;
+        margin: 50px 0 25px 0;
+        tr{
+            line-height:50px;
+            td{
+                .btn_back,.btn_save{
+                    float:right;
+                    margin-top:4px;
+                    height: 40px;
+                }
+                &.model-list{
+                    font-size:13px;
+                    width: 52px;
+                }
+                &.model-content{
+                    padding-left:13px;
+                    span{
+                        padding:0;
+                    }
+                }
+                input[type='radio']{
+                    position: relative;
+                    &:after {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 20px;
+                        top: -1px;
+                        left: -1px;
+                        position: absolute;
+                        background-color: white;
+                        content: '';
+                        display: inline-block;
+                        visibility: visible;
+                        border: 2px solid white;
+                        &:checked{
+                            background-color: $main_color;
+                        }
+                    }
+                    &:checked:after {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 20px;
+                        top: -1px;
+                        left: -1px;
+                        position: absolute;
+                        background-color: $main_color;
+                        content: '';
+                        display: inline-block;
+                        visibility: visible;
+                        border: 2px solid white;
+                    }
+                    &:before {
+                        width: 22px;
+                        height: 22px;
+                        border-radius: 22px;
+                        top: -2px;
+                        left: -2px;
+                        position: absolute;
+                        background-color: white;
+                        content: '';
+                        display: inline-block;
+                        visibility: visible;
+                        border: 1px solid $main_color;
+                    }
+                    &:checked:before {
+                        width: 22px;
+                        height: 22px;
+                        border-radius: 22px;
+                        top: -2px;
+                        left: -2px;
+                        position: absolute;
+                        background-color: white;
+                        content: '';
+                        display: inline-block;
+                        visibility: visible;
+                        border: 1px solid $main_color;
+                    }
+                }
+                label {
+                    margin-left:10px;
+                    &.date-icon {
+                        position: absolute;
+                        &:after {
+                            position: absolute;
+                            left: 4px;
+                            top: 19px;
+                            z-index: 10;
+                            content: '\f073';
+                        }
+                    }
+                }
+                #datepicker,#datepicker-start,#datepicker-end{
+                    padding-left:38px;
+                    width:100px;
+                }
+                p{
+                    margin-right: 16px;
+                }
+            }
+        }
+        .date-input{
+            display: inline-block;
+        }
+    }
+    //編輯樣板表單
+    &-template-edit {
+        border-collapse: collapse;
+        width: 100%;
+        // 星座設定按鈕
+        .issign{
+            .sign_wrap{
+                position: absolute;
+                top: 0;
+                right: 40px;
+                width: 40px;
+                text-align: center;
+                i{
+                    cursor: pointer;
+                    font-size:20px;
+                    vertical-align: middle;
+                }
+                .sign_setting{
+                    line-height: 40px;
+                    background-color:#fff;
+                    border-bottom: solid 1px #000;
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
+                    width: 405px;
+                    z-index: 999;
+                    font-size:0;
+                    .sign_title{
+                        display: inline-block;
+                        vertical-align: middle;
+                        text-align: center;
+                        font-size:13px;
+                        width: 40px;
+                        border-top: solid 1px #000;
+                        border-right: solid 1px #000;
+                        border-left: solid 1px #000;
+                    }
+                    .sign_color{
+                        text-align: left;
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 365px;
+                        border-top: solid 1px #000;
+                        border-right: solid 1px #000;
+                        .color {
+                            cursor: pointer;
+                            margin: 4px 4px;
+                            border-radius: 10px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 20px;
+                            height: 20px;
+                            text-align: center;
+                            position: relative;
+                        }
+                        .color-active::before{
+                            line-height:20px;
+                            font-size:12px;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .islogoimg{
+            .check_unit{
+                font-size: 12px;
+            }
+        }
+        // 時間選擇器
+        .date_wrap{ // new icon 專屬
+            display: inline-block;
+            margin-left: 15px;
+            vertical-align: middle;
+            font-size: 0;
+            label{
+                font-size:13px;
+            }
+            span.date_mark{
+                font-size:13px;
+                vertical-align: middle;
+                margin: auto 10px;
+            }
+            .date-input{
+                font-size:13px;
+            }
+        }
+        .date-input {
+            display: inline-block;
+            input#datepicker{
+                padding-left: 35px;
+                margin-right:0;
+            }
+            .vdp-datepicker__calendar .cell.selected {
+                background: $main_color;
+                color:white;
+            }
+            .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover{
+                border: 1px solid $main_color;
+            }
+        }
+        .isbannerimg,.isviewimg{
+            .check_unit{
+                font-size:0;
+                input{
+                    font-size:13px;
+                }
+                button{
+                    vertical-align: top;
+                }
+            }
+        }
+        .table-copy-btn{
+            font-size:0;
+            input{
+                font-size:13px;
+            }
+            button{
+                    vertical-align: top;
+                }
+        }
+        label.date-icon {
+            position: absolute;
+            &:after {
+                position: absolute;
+                left: 15px;
+                top: 11px;
+                z-index: 10;
+                content: '\f073';
+                .isnew & {
+                    left:10px;
+                }
+            }
+        }
+        td {
+            vertical-align: middle;
+            border: 1px solid #e1e6f0;
+            padding: 8px 15px;
+            position: relative;
+            &.js-color-pick{
+                font-size: 0;
+                padding:6px 8px;
+            }
+        }
+        tr.temp-title td {
+            line-height: 60px;
+            padding: 0 20px;
+            background: #F7F2FC;
+            width: 100%;
+            text-align: left !important;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        tr td:first-child {
+            padding: 0 15px;
+            line-height: 60px;
+            width: 220px;
+            text-align: right;
+        }
+        tr:nth-child(even) {
+            background: #fefcff;
+        }
+        tr:last-child {
+            background: none;
+            td {
+                padding-top: 30px;
+                background: none;
+                border: none;
+            }
+        }
+        .color {
+            cursor: pointer;
+            margin: 4px 7px;
+        }
+        input[type="text"] {
+            width: 400px;
+            height:35px;
+            margin-right: 10px;
+            &#new_startdate,&#new_enddate{
+                width: 110px;
+                padding-left: 30px;
+                padding-right: 10px;
+                margin-right: 0;
+            }
+            @include MQ(custom) {
+                width: 220px;
+                &#new_startdate,&#new_enddate{
+                    width: 110px;
+                }
+            }
+        }
+        textarea {
+            @include border-radius(3px);
+            // border: 1px solid #e1e6f0;
+            width: 400px;
+            height: 120px;
+            padding: 5px 15px;
+            text-align: left;
+            font-size:13px;
+        }
+        &-add {
+            margin-bottom: 8px;
+            font-size:0;
+            input,
+            a {
+                float: left;
+            }
+            input {
+                font-size:13px;
+            }
+            a {
+                margin-top: 2px;
+            }
+        }
+    }
+    &-copy-btn {
+        height:45px;
+        padding-top: 10px;
+        span:before {
+            content: '\f0c5';
+        }
+    }
+    //table:編輯 使用者資料表單
+    &-order {
+        border-collapse: collapse;
+        width: 100%;
+        td {
+            border: 1px solid #e1e6f0;
+            padding: 8px 15px;
+            //line-height: 20px;
+        }
+        tr:nth-child(even) {
+            background: #fefcff;
+        }
+        tr>td:first-child {
+            width: 220px;
+            height: 42px;
+            line-height: 42px;
+            text-align: right;
+        }
+        tr.table-sepa td {
+            border-top: 2px solid #e1e6f0;
+        }
+        tr:last-child {
+            background: none;
+            td {
+                padding-top: 20px;
+                background: none;
+                border: none;
+            }
+        }
+        span {
+            color: $sub_color;
+        }
+        input[type="text"],input[type="password"] {
+            width: 250px;
+        }
+        p,
+        label,
+        input[type="radio"] {
+            display: inline-block;
+            margin: 0 5px;
+            vertical-align: middle;
+        }
+        p {
+            margin-right: 20px;
+        }
+        input[type="radio"] {
+            margin-top: 0px;
+        }
+    }
+    &-enable,
+    &-disable,
+    &-off {
+        @include transition-property(background, border, color);
+        @include transition-duration(.3s);
+        @include transition-timing-function(ease-in);
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        min-width: 80px;
+        height: 35px;
+        line-height: 35px;
+        background: #ffffff;
+        border: 1px solid #e1e6f0;
+        color: $title_color;
+        margin-right: -4px;
+        &:hover {
+            color: $main_color !important;
+            border: 1px solid $main_color !important;
+            background: #fff !important;
+        }
+        &.table-active {
+            border: 1px solid $main_color;
+            background: $main_color;
+            color: #ffffff;
+            &:hover {
+                color: #ffffff;
+            }
+        }
+        &.btn_disabled{
+            border: 1px solid #ccc;
+            background: #fff;
+            color:#ccc;
+            &:hover{
+                border: 1px solid #ccc !important;
+                background: #fff !important;
+                color:#ccc !important;
+            }
+            &.table-active {
+                background: #ccc;
+                color: #ffffff;
+                &:hover{
+                    border: 1px solid #ccc !important;
+                    background: #ccc !important;
+                    color: #ffffff !important;
+                }
+            }
+        }
+    }
+    &-enable {
+        @include border-radius(3px 0 0 3px);
+    }
+    &-disable {
+        @include border-radius(0 3px 3px 0);
+        &.middle{
+            @include border-radius(0 0 0 0);
+        }
+        margin-right: -3px;
+    }
+    &-off {
+        @include border-radius(0 3px 3px 0);
+        margin-right: 0;
+    }
+    //table 使用者列表 & 紀錄列表
+    &-list {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 13px;
+        margin: 15px 0;
+        .tLeft {
+            text-align: left;
+        }
+        td {
+            color: $title_color;
+            border: 1px solid #e1e6f0;
+            padding: 15px 10px;
+            line-height: 20px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        thead td {
+            background: #F7F2FC;
+            line-height: 30px;
+            text-align: center;
+        }
+        &-user td {
+            //使用者列表
+            &.tNum {
+                //序號
+                width: 8%;
+            }
+            &.tName {
+                //名稱
+                width: 14%;
+            }
+            &.tId {
+                //帳號
+                width: 11%;
+            }
+            &.tPw {
+                //密碼
+                width: 11%;
+            }
+            &.tPer {
+                //權限
+                width: 11%;
+            }
+            &.tstatus {
+                //狀態
+                width: 11%;
+            }
+            &.tDate {
+                //最後一次登入
+                width: 16%;
+            }
+            &.tEdit {
+                //編輯
+                width: 18%;
+            }
+        }
+        &-modify td {
+            &.tNum {
+                //序號
+                width: 10%;
+            }
+            &.tAct {
+                //動作
+                width: 15%;
+            }
+            &.tCon {
+                //內容
+                width: 45%;
+            }
+            &.tUser {
+                //操作者
+                width: 15%;
+            }
+            &.tDate {
+                //時間
+                width: 15%;
+                min-width: 145px;
+            }
+        }
+        &-login-record td {
+            &.tUser {
+                //操作者
+                width: 35%;
+            }
+            &.tDate {
+                //時間
+                width: 65%;
+            }
+        }
+        tbody tr:nth-child(even) {
+            background: #fefcff;
+        }
+        tbody td {
+            &.tLink {
+                padding: 3px; //10
+                a {
+                    margin: 5px;
+                }
+            }
+        }
+    }
+    &-login-width {
+        //登入紀錄表格寬度設定
+        width: 620px;
+    }
+    &-username>a {
+        color: $sub_color;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.hide_or_show{
+    overflow: hidden;
+}
+
+.table-model-edit {
+    border-collapse: collapse;
+    width: 100%;
+    .islogoimg{
+        .check_unit{
+            font-size: 12px;
+        }
+    }
+    // 時間選擇器
+    .date_wrap{ // new icon 專屬
+        display: inline-block;
+        margin-left: 15px;
+        vertical-align: middle;
+        font-size: 0;
+        label{
+            font-size:13px;
+        }
+        span.date_mark{
+            font-size:13px;
+            vertical-align: middle;
+            margin: auto 10px;
+        }
+        .date-input{
+            font-size:13px;
+        }
+    }
+    label.date-icon {
+        position: absolute;
+        &:after {
+            position: absolute;
+            left: 15px;
+            top: 11px;
+            z-index: 10;
+            content: '\f073';
+            .isnew & {
+                left:10px;
+            }
+        }
+    }
+    .date-input {
+        display: inline-block;
+        input#datepicker{
+            padding-left: 35px;
+            margin-right:0;
+            width:220px;
+        }
+        .vdp-datepicker__calendar .cell.selected {
+            background: $main_color;
+            color:white;
+        }
+        .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover{
+            border: 1px solid $main_color;
+        }
+    }    
+    td {
+        vertical-align: middle;
+        border: 1px solid #e1e6f0;
+        padding: 8px 15px;
+        position: relative;
+        &.model_style{
+            font-size:0;
+            padding:8px 15px 0;
+        }
+    }
+    tr.temp-title td {
+        line-height: 60px;
+        padding: 0 20px;
+        background: #F7F2FC;
+        width: 100%;
+        // text-align: left !important;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    tr td:first-child {
+        padding: 0 15px;
+        line-height: 40px;
+        width: 220px;
+        text-align: right;
+    }
+    tr:first-child td{
+        text-align: left;
+        line-height: 40px;
+        .btn_wrap &{
+            line-height: 60px;
+        }
+    }
+    tr:nth-child(even) {
+        background: #fefcff;
+    }
+    tr.btn_wrap {
+        background: none;
+        td {
+            padding-top: 30px;
+            background: none;
+            border: none;
+        }
+    }
+    .model_btn{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        font-size:14px;
+        border-radius: 50%;
+        position: relative;
+        outline: none;
+        &.btn_trash{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #E85B70;
+            border: 2px solid #E85B70;
+            transition-property: background-color,color;
+            transition-duration: 1s;
+            margin-left: 9px;
+            i{
+                color: #fff;
+            }
+            &:hover{
+                background-color: #fff;
+                i{
+                    color: #E85B70;
+                }
+            }
+        }
+        i{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            line-height:26px;
+        }
+    }
+}
